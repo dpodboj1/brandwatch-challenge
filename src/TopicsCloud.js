@@ -6,7 +6,16 @@ class TopicsCloud extends Component {
   render() {
     const { topics } = this.props;
     return (
-      <Topic />
+      <div>
+        {
+          //  map through the topics array and for each object render a Topic component
+          topics.map(topic =>
+          (<Topic
+            key={topic.id}
+            {...topic}
+          />))
+        }
+      </div>
     );
   }
 }
