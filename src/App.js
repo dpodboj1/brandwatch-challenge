@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TopicsCloud from './TopicsCloud';
 import data from './topics.json';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    //  get data and update state whenever component mounts
     this.getData();
   }
 
@@ -34,8 +36,9 @@ class App extends Component {
 
   render() {
     const { topics } = this.state;
-    console.log(topics);
-    return <p>Hello world!</p>;
+    return (
+      <TopicsCloud topics={topics} />
+    );
   }
 }
 
