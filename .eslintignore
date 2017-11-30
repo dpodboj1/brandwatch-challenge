@@ -1,0 +1,6 @@
+#ignore webpack
+webpack.config.babel.js
+#ignore node_modules
+/node_modules
+#ignore dist
+/dist
