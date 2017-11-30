@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Topic from './Topic';
+import Info from './Info';
 
 class TopicsCloud extends Component {
   constructor() {
@@ -12,12 +13,14 @@ class TopicsCloud extends Component {
   }
 
   handleClick(currentTopicId) {
-    console.log('currentTopicId is:', currentTopicId)
     this.setState({ currentTopicId });
   }
 
   render() {
     const { topics } = this.props;
+    const { currentTopicId } = this.state;
+    //  filter through the topics array and return an object which matches currentTopicId
+    const topicByCurrentId = topics.filter(topic => topic.id === currentTopicId);
     return (
       <div>
         {
@@ -28,6 +31,14 @@ class TopicsCloud extends Component {
             key={topic.id}
             {...topic}
           />))
+        }
+        {
+          //  render Info component if currentTopicId is not empty
+          currentTopicId !== ''
+          ?
+            topicByCurrentId.map(topic => (<Info key={currentTopicId} {...topic} />))
+          :
+            <p>Click on a topic to get additional info!</p>
         }
       </div>
     );
