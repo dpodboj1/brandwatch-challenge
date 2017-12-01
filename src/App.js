@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { TagCloud } from 'react-tagcloud';
 import TopicsCloud from './TopicsCloud';
 import data from './topics.json';
 
