@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TagCloud } from 'react-tagcloud';
-import TopicsCloud from './TopicsCloud';
 import data from './topics.json';
 
 class App extends Component {
@@ -23,11 +22,11 @@ class App extends Component {
     //  push an object to the topics array with necessary data
     const topicData = data.topics.map(topic =>
       topics.push({
-        id: topic.id,
-        label: topic.label,
-        volume: topic.volume,
+        key: topic.id,
+        value: topic.label,
+        count: topic.volume,
         negative: topic.sentiment.negative,
-        positive: topic.sentiment.postiive,
+        positive: topic.sentiment.positive,
         neutral: topic.sentiment.neutral,
         score: topic.sentimentScore,
       }));
@@ -38,7 +37,9 @@ class App extends Component {
   render() {
     const { topics } = this.state;
     return (
-      <TopicsCloud topics={topics} />
+      <TagCloud
+        tags={topics}
+      />
     );
   }
 }
