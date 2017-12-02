@@ -45,11 +45,26 @@ class App extends Component {
     const { currentTopicId } = this.state;
     //  filter through the topics array and return an object which matches currentTopicId
     const topicByCurrentId = topics.filter(topic => topic.key === currentTopicId);
+    //  define a customRenderer which allows manipulation of a Topic inside TagCloud
+    const customRenderer = (tag, size, color) => (
+      <span
+        key={tag.key}
+        style={{
+          fontSize: 50,
+          color: 'black',
+        }}
+      >
+        {tag.value}
+      </span>
+    );
     return (
       <div>
         <TagCloud
-          onClick={tag => this.handleClick(tag.key)}
           tags={topics}
+          minSize={1}
+          maxSize={2}
+          onClick={tag => this.handleClick(tag.key)}
+          renderer={customRenderer}
         />
         {
           //  render Info component if currentTopicId is not empty
