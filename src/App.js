@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { TagCloud } from 'react-tagcloud';
+import { TagCloud as TopicCloud } from 'react-tagcloud';
 import Info from './Info';
 import data from './topics.json';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -38,26 +39,26 @@ class App extends Component {
 
   calcSize(value) {
     if (value > 80) {
-      return 60;
+      return 'TopicCloud--topic_fontsize1';
     } else if (value > 60) {
-      return 50;
+      return 'TopicCloud--topic_fontsize2';
     } else if (value > 40) {
-      return 40;
+      return 'TopicCloud--topic_fontsize3';
     } else if (value > 20) {
-      return 30;
+      return 'TopicCloud--topic_fontsize4';
     } else if (value > 10) {
-      return 20;
+      return 'TopicCloud--topic_fontsize5';
     }
-    return 10;
+    return 'TopicCloud--topic_fontsize6';
   }
 
   calcColor(value) {
     if (value > 60) {
-      return 'green';
+      return 'positive';
     } else if (value < 40) {
-      return 'red';
+      return 'negative';
     }
-    return 'gray';
+    return 'neutral';
   }
 
   handleClick(currentTopicId) {
@@ -69,29 +70,25 @@ class App extends Component {
     const { currentTopicId } = this.state;
     //  filter through the topics array and return an object which matches currentTopicId
     const topicByCurrentId = topics.filter(topic => topic.key === currentTopicId);
-    //  define a customRenderer which allows manipulation of a Topic inside TagCloud
+    //  define a customRenderer which allows manipulation of a Topic inside TopicCloud
     const customRenderer = (tag, size, color) => (
       <span
         key={tag.key}
-        style={{
-          fontSize: this.calcSize(tag.count),
-          color: this.calcColor(tag.count),
-          margin: '3px',
-          padding: '3px',
-        }}
+        className={`TopicCloud--topic ${this.calcSize(tag.count)} ${this.calcColor(tag.count)}`}
       >
         {tag.value}
       </span>
     );
     return (
       <div>
-        <TagCloud
+        <TopicCloud
           tags={topics}
           shuffle={false}
           minSize={1}
           maxSize={2}
           onClick={tag => this.handleClick(tag.key)}
           renderer={customRenderer}
+          className="TopicCloud--container"
         />
         {
           //  render Info component if currentTopicId is not empty
@@ -99,7 +96,7 @@ class App extends Component {
           ?
             topicByCurrentId.map(topic => (<Info key={currentTopicId} {...topic} />))
           :
-            <p>Click on a topic to get additional info!</p>
+            <div>Click on a topic to get additional info!</div>
         }
       </div>
     );

@@ -1,0 +1,50 @@
+/*
+
+Style rules specific to App.css are defined here
+
+*/
+
+.TopicCloud--container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  max-width: 800px;
+  min-width: 200px;
+}
+
+.TopicCloud--topic {
+  padding: 2px;
+  margin: 2px;
+}
+
+/*
+
+Style rules which define different font sizes based on total mentions are defined here.
+The lower the x in fontsize(x), the bigger the font, the same logic applies as defining
+different headers (for instance: h1, h2...).
+
+*/
+
+.TopicCloud--topic_fontsize1 {
+  font-size: 4em;
+}
+
+.TopicCloud--topic_fontsize2 {
+  font-size: 3em;
+}
+
+.TopicCloud--topic_fontsize3 {
+  font-size: 2em;
+}
+
+.TopicCloud--topic_fontsize4 {
+  font-size: 1.5em;
+}
+
+.TopicCloud--topic_fontsize5 {
+  font-size: 1em;
+}
+
+.TopicCloud--topic_fontsize6 {
+  font-size: 0.5em;
+}
