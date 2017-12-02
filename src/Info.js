@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Info.css';
 
 const Info = props => (
-  <div>
+  <div className="Info--container">
     <div>Information on topic: {props.value}</div>
     <div>Total Mentions: {props.count}</div>
     <div>Positive Mentions: <span className="positive" >{props.positive}</span></div>

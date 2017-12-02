@@ -1,0 +1,18 @@
+/*
+
+Style rules specific to Info.css are defined here
+
+*/
+
+@media (min-width: 576px) {
+  .Info--container {
+    width: 400px;
+  }
+}
+
+.Info--container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  min-width: 200px;
+}
