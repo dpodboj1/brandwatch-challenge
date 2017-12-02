@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TagCloud } from 'react-tagcloud';
+import Info from './Info';
 import data from './topics.json';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     super();
     this.state = {
       topics: [],
+      currentTopicId: '',
     };
   }
 
@@ -34,12 +36,30 @@ class App extends Component {
     this.setState({ topics });
   }
 
+  handleClick(currentTopicId) {
+    this.setState({ currentTopicId });
+  }
+
   render() {
     const { topics } = this.state;
+    const { currentTopicId } = this.state;
+    //  filter through the topics array and return an object which matches currentTopicId
+    const topicByCurrentId = topics.filter(topic => topic.key === currentTopicId);
     return (
-      <TagCloud
-        tags={topics}
-      />
+      <div>
+        <TagCloud
+          onClick={tag => this.handleClick(tag.key)}
+          tags={topics}
+        />
+        {
+          //  render Info component if currentTopicId is not empty
+          currentTopicId !== ''
+          ?
+            topicByCurrentId.map(topic => (<Info key={currentTopicId} {...topic} />))
+          :
+            <p>Click on a topic to get additional info!</p>
+        }
+      </div>
     );
   }
 }
