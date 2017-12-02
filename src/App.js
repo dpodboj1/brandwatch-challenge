@@ -80,7 +80,7 @@ class App extends Component {
       </span>
     );
     return (
-      <div>
+      <main className="App--container">
         <TopicCloud
           tags={topics}
           shuffle={false}
@@ -96,9 +96,9 @@ class App extends Component {
           ?
             topicByCurrentId.map(topic => (<Info key={currentTopicId} {...topic} />))
           :
-            <div>Click on a topic to get additional info!</div>
+            <div />
         }
-      </div>
+      </main>
     );
   }
 }
