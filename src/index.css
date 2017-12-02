@@ -1,0 +1,27 @@
+/*
+
+Global style rules are defined here
+
+ */
+
+body {
+  font-family: sans-serif;
+}
+
+/*
+
+General style rules used by more components defined here
+
+ */
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.neutral {
+  color: gray;
+}

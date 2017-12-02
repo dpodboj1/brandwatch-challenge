@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 const Info = props => (
   <div>
-    <p>Information on topic: {props.value}</p>
-    <p>Total Mentions: {props.count}</p>
-    <p>Positive Mentions: {props.positive}</p>
-    <p>Neutral Mentions: {props.neutral}</p>
-    <p>Negative Mentions: {props.negative}</p>
+    <div>Information on topic: {props.value}</div>
+    <div>Total Mentions: {props.count}</div>
+    <div>Positive Mentions: <span className="positive" >{props.positive}</span></div>
+    <div>Neutral Mentions: {props.neutral}</div>
+    <div>Negative Mentions: <span className="negative" >{props.negative}</span></div>
   </div>
 );
 
