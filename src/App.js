@@ -36,6 +36,30 @@ class App extends Component {
     this.setState({ topics });
   }
 
+  calcSize(value) {
+    if (value > 80) {
+      return 60;
+    } else if (value > 60) {
+      return 50;
+    } else if (value > 40) {
+      return 40;
+    } else if (value > 20) {
+      return 30;
+    } else if (value > 10) {
+      return 20;
+    }
+    return 10;
+  }
+
+  calcColor(value) {
+    if (value > 60) {
+      return 'green';
+    } else if (value < 40) {
+      return 'red';
+    }
+    return 'gray';
+  }
+
   handleClick(currentTopicId) {
     this.setState({ currentTopicId });
   }
@@ -50,8 +74,10 @@ class App extends Component {
       <span
         key={tag.key}
         style={{
-          fontSize: 50,
-          color: 'black',
+          fontSize: this.calcSize(tag.count),
+          color: this.calcColor(tag.count),
+          margin: '3px',
+          padding: '3px',
         }}
       >
         {tag.value}
@@ -61,6 +87,7 @@ class App extends Component {
       <div>
         <TagCloud
           tags={topics}
+          shuffle={false}
           minSize={1}
           maxSize={2}
           onClick={tag => this.handleClick(tag.key)}
