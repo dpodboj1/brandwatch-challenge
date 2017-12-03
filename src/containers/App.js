@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TagCloud as TopicCloud } from 'react-tagcloud';
 import { calcSize, calcColor } from '../helpers';
+import Header from '../components/Header';
 import Info from '../components/Info';
 import data from '../topics.json';
 import './App.css';
@@ -64,7 +65,8 @@ export default class App extends Component {
       </span>
     );
     return (
-      <main>
+      <main className="Main--container">
+        <Header />
         {
           !loading
           ?

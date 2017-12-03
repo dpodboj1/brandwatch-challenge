@@ -4,17 +4,18 @@ Style rules specific to App.css are defined here
 
 */
 
-@media (max-width: 576px) {
-  .App--container {
-    flex-direction: column;
-    align-items: center;
-  }
+.Main--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
 }
 
 .App--container {
   display: flex;
-  justify-content: center;
-  min-width: 200px;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .TopicCloud--container {
