@@ -39,8 +39,9 @@ export default class App extends Component {
         score: topic.sentimentScore,
       }));
     const loading = false;
-    //  set new state of this.state.topics to topics array, change loading to false
+    //  sort the topics array randomly
     topics.sort(() => Math.random() - 0.5);
+    //  set new state of this.state.topics to topics array, change loading to false
     this.setState({ topics, loading });
   }
 
