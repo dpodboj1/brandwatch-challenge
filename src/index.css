@@ -6,6 +6,7 @@ Global style rules are defined here
 
 body {
   font-family: sans-serif;
+  color: #424242;
 }
 
 /*
@@ -15,13 +16,13 @@ General style rules used by more components defined here
  */
 
 .positive {
-  color: green;
+  color: #4CAF50;
 }
 
 .negative {
-  color: red;
+  color: #F44336;
 }
 
 .neutral {
-  color: gray;
+  color: #9E9E9E;
 }
