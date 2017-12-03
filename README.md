@@ -10,7 +10,7 @@ This application was created using [create-react-app](https://github.com/faceboo
 
 * `/components:`
   * Contains presentational components which are used by the application.
-  * Header is a component which returns a <h1> with the title of the application.
+  * Header is a component which returns a header with the title of the application.
   * Info is a component which shows additional information of a topic.
 
 * `/containers:`
@@ -21,6 +21,6 @@ This application was created using [create-react-app](https://github.com/faceboo
 Clone the repo and install dependencies by typing `npm install` if using npm or `yarn` if using yarn.
 
 ## Scripts
-Use `npm build` or `yarn build` to create an optimized production build in /build folder.
-Use `npm start` or `yarn start` to launch the app in the browser using a development server.
-Use `npm test` or `yarn test` to run all tests.
+* `npm build` or `yarn build` to create an optimized production build in /build folder.
+* Use `npm start` or `yarn start` to launch the app in the browser using a development server.
+* Use `npm test` or `yarn test` to run all tests.
