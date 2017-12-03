@@ -6,7 +6,7 @@ Style rules specific to Info.css are defined here
 
 @media (min-width: 576px) {
   .Info--container {
-    width: 400px;
+    width: 450px;
   }
 }
 
@@ -15,4 +15,11 @@ Style rules specific to Info.css are defined here
   flex-flow: column nowrap;
   justify-content: center;
   min-width: 200px;
+  padding-left: 25px;
+}
+
+.Info--container > div {
+  padding: 2px;
+  margin: 2px;
+  font-size: 1.25em;
 }

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import './Info.css';
 
 const Info = props => (
-  <div className="Info--container">
+  <aside className="Info--container">
     <div>Information on topic: {props.value}</div>
     <div>Total Mentions: {props.count}</div>
     <div>Positive Mentions: <span className="positive" >{props.positive}</span></div>
     <div>Neutral Mentions: {props.neutral}</div>
     <div>Negative Mentions: <span className="negative" >{props.negative}</span></div>
-  </div>
+  </aside>
 );
 
 Info.defaultProps = {
