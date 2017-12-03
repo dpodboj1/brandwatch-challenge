@@ -1,4 +1,4 @@
-//  calcSize is used to determine fontsize of certain topic inside cloud
+//  calcSize is used to determine fontsize of certain topic inside TopicCloud
 export const calcSize = (value) => {
   if (value > 80) {
     return 'TopicCloud--topic_fontsize1';
@@ -14,7 +14,7 @@ export const calcSize = (value) => {
   return 'TopicCloud--topic_fontsize6';
 };
 
-//  calcColor is used to determine color of certain topic inside cloud
+//  calcColor is used to determine color of certain topic inside TopiCloud
 export const calcColor = (value) => {
   if (value > 60) {
     return 'positive';
