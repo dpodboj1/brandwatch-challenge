@@ -26,7 +26,7 @@ export default class App extends Component {
 
   //  method used to get data from topics.json
   getData() {
-    //  push an object to the topics array with necessary data
+    //  return an object to the topics array
     const topics = data.map(topic =>
       ({
         key: topic.id,
