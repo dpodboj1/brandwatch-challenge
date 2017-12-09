@@ -26,11 +26,9 @@ export default class App extends Component {
 
   //  method used to get data from topics.json
   getData() {
-    //  empty array to push topics to
-    const topics = [];
     //  push an object to the topics array with necessary data
-    data.topics.map(topic =>
-      topics.push({
+    const topics = data.map(topic =>
+      ({
         key: topic.id,
         value: topic.label,
         count: topic.volume,
@@ -59,7 +57,7 @@ export default class App extends Component {
     const customRenderer = (tag, size, color) => (
       <span
         key={tag.key}
-        className={`TopicCloud--topic ${calcSize(tag.count)} ${calcColor(tag.count)}`}
+        className={`TopicCloud--topic ${calcSize(tag.count)} ${calcColor(tag.score)}`}
       >
         {tag.value}
       </span>
